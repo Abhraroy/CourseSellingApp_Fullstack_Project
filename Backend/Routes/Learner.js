@@ -1,4 +1,4 @@
-import express, { query } from "express";
+import express from "express";
 import { Router } from "express";
 import { Learnermodel, TransactionModel,Course_Detail_Model} from "../Db.js";
 import dotenv from "dotenv";
@@ -154,7 +154,7 @@ router.get("/mycourse", auth, async (req, res) => {
 
 
 router.get("/course",auth,async(req,res)=>{
-  const course_id = query.course_id
+  const course_id = req.query.course_id
   try{
     const result = await Course_Detail_Model.findOne({course_id:course_id})
     res.status(200).json(result)
@@ -174,7 +174,7 @@ router.get("/course",auth,async(req,res)=>{
 
 
 router.get("/buycourse",auth,async(req,res)=>{
-  const course_id = query.course_id
+  const course_id = req.query.course_id
   const user_id = req.user_id
   const already_bought = await TransactionModel({course_id:course_id,user_id:user_id})
   if(already_bought){
