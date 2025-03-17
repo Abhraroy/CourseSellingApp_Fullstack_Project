@@ -10,8 +10,9 @@ const PORT = process.env.PORT
 const db_link = process.env.DB_URI
 
 
-mongoose.connect(db_link).then(()=>{
+mongoose.connect(db_link+"/CourseSellingApp_v1").then(()=>{
     console.log("connected to database successfully");
+    console.log(db_link+"/CourseSellingApp_v1");
 })
 const app = express()
 
