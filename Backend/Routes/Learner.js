@@ -113,6 +113,19 @@ router.get("/allcourses",async(req,res)=>{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.get("/mycourse", auth, async (req, res) => {
   const user_id = req.userid;
   let course_id_list = [];
@@ -136,6 +149,27 @@ router.get("/mycourse", auth, async (req, res) => {
     res.status(500).json({ msg: "Internal server error" });
   }
 });
+
+
+
+
+router.get("/course",auth,async(req,res)=>{
+  const course_id = query.course_id
+  try{
+    const result = await Course_Detail_Model.findOne({course_id:course_id})
+    res.status(200).json(result)
+  }catch(err){
+    res.status(500).json({
+      msg:"Internal server error"
+    })
+  }
+})
+
+
+
+
+
+
 
 
 
