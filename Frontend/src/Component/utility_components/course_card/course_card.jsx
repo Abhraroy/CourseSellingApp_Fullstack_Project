@@ -13,6 +13,9 @@ function Coursecard() {
                 <span className='vote'> <BiSolidUpvote/> 678</span>
                 <span className='vote'><BiSolidDownvote /> 789</span>
             </div>
+            <div className="pricediv">
+                <div className="price">PRICE</div>67
+            </div>
         </div>
     </div>
   )
