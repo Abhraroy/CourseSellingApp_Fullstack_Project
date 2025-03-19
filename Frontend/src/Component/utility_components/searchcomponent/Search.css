@@ -1,0 +1,15 @@
+.searchcomponent{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchbox{
+    width: 50%;
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    outline: none;
+}

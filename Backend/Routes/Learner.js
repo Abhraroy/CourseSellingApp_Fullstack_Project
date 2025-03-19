@@ -176,7 +176,7 @@ router.get("/course",auth,async(req,res)=>{
 router.get("/buycourse",auth,async(req,res)=>{
   const course_id = req.query.course_id
   const user_id = req.user_id
-  const already_bought = await TransactionModel({course_id:course_id,user_id:user_id})
+  const already_bought = await TransactionModel.findOne({course_id:course_id,user_id:user_id})
   if(already_bought){
     return res.status(200).json({
       msg:"You have already bought this course"
