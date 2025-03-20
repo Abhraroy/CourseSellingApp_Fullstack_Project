@@ -20,6 +20,15 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 
 
+router.get("/",(req,res)=>{
+  res.json("hy")
+})
+
+
+
+
+
+
 
 
 router.post("/signup", async (req, res) => {
@@ -33,15 +42,21 @@ router.post("/signup", async (req, res) => {
     return res.status(409).json({ msg: "The email already exists!" });
   }
   try {
-    await Learnermodel.create({
+    const user = await Learnermodel.create({
       username: username,
       email: email,
       Password: final_hashed_password,
       PhoneNo: phoneno,
     });
+    const token = jwt.sign(
+      {
+        id: user._id,
+      },
+      JWT_SECRET
+    );
     res
       .status(200)
-      .json({ msg: "The Learner has been added to the database successfully" });
+      .json({ msg: "The Learner has been added to the database successfully",token });
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "Internal server error" });
@@ -80,7 +95,7 @@ router.post("/login", async (req, res) => {
         JWT_SECRET
       );
       res.status(200).json({
-        msg: token,
+        msg:"userlogged in",token,
       });
     } else {
       return res.status(401).json({

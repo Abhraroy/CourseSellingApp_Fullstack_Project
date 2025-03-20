@@ -19,6 +19,16 @@ function Signup() {
             password,password,
             phoneno:phoneno
         });
+        const signuptoken=response.data.token
+        if(signuptoken){
+            const loginresponse= await axios.post("/learner/login",{
+                email:email,
+                password:password
+            })
+            localStorage.setItem("token",loginresponse.data.token)
+        }else{
+            console.log("signup failed");
+        }
         console.log(response.data.msg);
         navigate('/learner')
         }catch(error){
