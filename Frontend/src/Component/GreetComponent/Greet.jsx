@@ -14,8 +14,8 @@ function Greet() {
                 </div>
                 <span className='student Roboto'>Student</span>
                 <div className="buttonContainer">
-                    <button className="register" onClick={()=>navigate('/Learner/signup')}>Register</button>
-                    <button className="login" onClick={()=>navigate('/Learner/login')}>Login</button>
+                    <button className="greetbutton register" onClick={()=>navigate('/Learner/signup')}>Register</button>
+                    <button className="greetbutton login" onClick={()=>navigate('/Learner/login')}>Login</button>
                 </div>
             </div>
             <div className="usercategorysquare">
@@ -24,8 +24,8 @@ function Greet() {
                 </div>
                 <span className='instructor Roboto'>Instructor</span>
                 <div className="buttonContainer">
-                    <button className="register">Register</button>
-                    <button className="login">Login</button>
+                    <button className="greetbutton register">Register</button>
+                    <button className="greetbutton login">Login</button>
                 </div>
             </div>
         </div>

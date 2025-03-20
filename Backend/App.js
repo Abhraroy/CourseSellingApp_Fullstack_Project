@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.use("/Learner",LearnerRoutes)
+app.use("/learner",LearnerRoutes)
 
 
 
