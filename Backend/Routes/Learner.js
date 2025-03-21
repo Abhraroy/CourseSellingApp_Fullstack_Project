@@ -21,7 +21,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 
 router.get("/",(req,res)=>{
-  res.json("hy")
+  res.status(200).json("hy")
 })
 
 

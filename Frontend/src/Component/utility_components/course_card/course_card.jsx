@@ -9,6 +9,7 @@ function Coursecard({course_name,cover_image,Paid,upvote,downvote,price,descript
 
 
   return (
+    
     <div className="parentContainer">
         <div className="thumbnail">
           <img className='thumbnailImg' src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8=" alt='he' />

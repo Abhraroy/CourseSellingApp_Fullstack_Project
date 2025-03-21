@@ -1,0 +1,59 @@
+.headercontainer{
+    width: 100vw;
+    height: 10vh;
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 10px rgb(241, 236, 236);
+}
+.headerlogo{
+    width: 10%;
+    height: 100%;
+    background-color: red;
+}
+.navmenu{
+    width: 90%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;
+    box-sizing: border-box;
+    padding-right:5rem;
+    gap:2rem;
+}
+.navoption{
+    width: 7rem;
+    height: 3rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 0px;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    padding-left:3px;
+    padding-right: 3px;
+   
+}
+.navoption:hover{
+    background-color: rgb(214, 249, 249);
+}
+.CgProfile{
+    scale:2;
+}
+.CgProfile:hover{
+    scale:2.3;
+}
+.searchbar{
+    width:60%;
+    height: 68%;
+    border-radius: 50px;
+    box-sizing: border-box;
+    padding: 1rem;
+    outline: none;
+    border: 3px solid brown;
+}
+.searchbar:hover{
+    background-color: rgb(214, 249, 249);
+}
