@@ -12,11 +12,17 @@ function Allcourse() {
   const [coursedata, setcoursedata] = useState()
   const [courseType, setcoursetype] = useState([])
   useEffect(() => {
-    const response = axios.get("/learner/allcourses").then((response) => {
-      console.log(response.data);
-      setcoursedata(response.data)
-    })
-  }, [])
+    const getallcourse = async()=>{
+      try{
+        const response = await axios.get("/learner/allcourses")
+          console.log(response.data);
+          setcoursedata(response.data)
+      }catch(err){
+        console.log(err);
+      }
+    }
+    getallcourse()
+  },[])
 
   useEffect(() => {
     console.log("Updated coursedata:", coursedata);

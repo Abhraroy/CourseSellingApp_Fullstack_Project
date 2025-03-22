@@ -4,7 +4,7 @@ dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET
 
 export const auth = (req,res,next)=>{
-    const auth_header = req.headers.Authorization
+    const auth_header = req.headers.authorization
     let token
     if(auth_header){
         token = auth_header.split(" ")[1] 

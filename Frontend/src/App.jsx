@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Route,Routes} from "react-router-dom"
+import {HashRouter,BrowserRouter,Route,Routes} from "react-router-dom"
 import Layout from './layout'
 import Homepage from './Component/Homepage/Homepage'
 import Allcourse from './Component/Allcourse/Allcourse'
@@ -16,7 +16,7 @@ import Mycourse from './Component/Mycourse/Mycourse'
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<Greet />}></Route>
         <Route path='/learner/signup' element={<Signup />}></Route>
@@ -28,7 +28,7 @@ function App() {
           <Route path='mycourse' element={<Mycourse />}></Route>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </>
   )
 }

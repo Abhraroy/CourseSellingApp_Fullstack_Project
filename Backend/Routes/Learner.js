@@ -30,7 +30,6 @@ router.get("/",(req,res)=>{
 
 
 
-
 router.post("/signup", async (req, res) => {
   const { username, email, password, phoneno } = req.body;
   console.log(req.body, "req");
@@ -142,16 +141,19 @@ router.get("/allcourses",async(req,res)=>{
 
 
 router.get("/mycourse", auth, async (req, res) => {
-  const user_id = req.userid;
+  const user_id = req.user_id;
   let course_id_list = [];
   try {
     const temp = await TransactionModel.find({ user_id: user_id });
-
+    console.log(temp);
+    
     if (temp) {
       temp.forEach((e) => {
+        console.log(e.course_id);
         course_id_list.push(e.course_id);
       });
     }
+    console.log(course_id_list);
     const courses = await Course_Detail_Model.find({ course_id: { $in: course_id_list } });
     console.log(courses);
     if(courses){

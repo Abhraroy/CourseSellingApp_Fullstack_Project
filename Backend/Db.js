@@ -14,7 +14,7 @@ const learner = new Schema({
 const transaction = new Schema({
     user_id:ObjectId,
     course_name:String,
-    course_id:String,
+    course_id:Number,
     Price:Number
 },{timestamps:true})
 

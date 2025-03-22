@@ -22,7 +22,7 @@ function Coursecard({course_name,cover_image,Paid,upvote,downvote,price,descript
             <div className="pricediv">
                 <div className="price Roboto">PRICE:{price}</div>
                 <div className="typediv Roboto">Free</div>
-                <button className='buyButton Roboto' onClick={()=>navigate(`/Learner/buycourse`)}>Buy</button>
+                <button className='buyButton Roboto' onClick={()=>navigate(`/learner/buycourse`)}>Buy</button>
             </div>
         </div>
         <div className="rating Roboto">
